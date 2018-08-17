@@ -1,8 +1,11 @@
-package lab4;
-import java.util.*;
+package lab11;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Dish {
 
+	
     private final String name;
     private final boolean vegetarian;
     private final int calories;
@@ -32,10 +35,11 @@ public class Dish {
     }
 
     public enum Type { MEAT, FISH, OTHER }
+    
 
     @Override
     public String toString() {
-        return name+" "+calories+" "+type+" "+vegetarian;
+        return name+" "+calories;
     }
 
     public static final List<Dish> menu =
