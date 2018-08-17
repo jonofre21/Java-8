@@ -1,4 +1,4 @@
-package lab11;
+package lab4;
 
 public class Myenums {
 

@@ -1,31 +1,33 @@
-package lab11;
+package lab4;
 
+public class Transaction{
 
-import lab11.GroupingTran.Currency;
+	private Trader trader;
+	private int year;
+	private int value;
 
+	public Transaction(Trader trader, int year, int value)
+	{
+		this.trader = trader;
+		this.year = year;
+		this.value = value;
+	}
 
+	public Trader getTrader(){ 
+		return this.trader;
+	}
 
+	public int getYear(){
+		return this.year;
+	}
 
-public class Transaction {
-    private final Currency currency;
-    private final double value;
-
-    public Transaction(Currency currency, double value) {
-        this.currency = currency;
-        this.value = value;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return currency + " " + value;
-    }
+	public int getValue(){
+		return this.value;
+	}
+	
+	public String toString(){
+	    return "{" + this.trader + ", " +
+	           "year: "+this.year+", " +
+	           "value:" + this.value +"}";
+	}
 }
-
