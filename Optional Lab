@@ -1,0 +1,7 @@
+List<String> lista1 = students.stream().filter(x->x.getCourses().isPresent())
+				.map(x->String.format("%s - %s",x.getId(),x.getCourses())).collect(toList());
+		System.out.println(lista1);
+
+		List<String> lista2 = students.stream().map(x->String.format("%s - %s", x.getId(),x.getCourses())).collect(toList());
+		
+		System.out.println(lista2);
