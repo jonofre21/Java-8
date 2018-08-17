@@ -1,0 +1,16 @@
+
+		Map<Program, List<Course>> coursesByType = courses.stream().collect(groupingBy(Course::getProgram));
+		System.out.println("a) " + coursesByType);
+		
+	
+		Map<Boolean, List<Course>> partitionedCourses = courses.stream().collect(partitioningBy(course->course.getProgram().equals(Program.SOEN)));
+		System.out.println("b) " + partitionedCourses);
+		
+
+		
+		//final Course courseLongestName = courses.stream().collect(maxBy(courseLengthComparator)).get();
+		
+		final Course courseLongestName=ExamQuestion2.findLongestName(courses.stream().collect(toList()));
+		System.out.println("c) " + courseLongestName.getName() );
+		
+		System.out.println("Goodbye, SOEN6411 Exam Question 2!");
