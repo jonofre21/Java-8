@@ -1,0 +1,19 @@
+
+		List<Course> fourCreditCourses = courses.stream().filter(x->x.getCredits()==4).collect(toList());
+		System.out.println("a) " + fourCreditCourses);
+
+		
+		int sumCredits = courses.stream().map(Course::getCredits).reduce(0, (a,b)->a+b);
+		System.out.println("b) " + sumCredits);
+
+
+		boolean hasMegaCourse = courses.stream().anyMatch(x->x.getCredits()>50);
+		System.out.println("c) " + hasMegaCourse);
+		
+
+		Optional<Course> c6441 = courses.stream().filter(x->x.getNumber().equalsIgnoreCase("6441")).findFirst();
+		System.out.println("d) " + c6441);
+		
+
+		Set<String> courseWords = courses.stream().map(x->x.getName()).collect(toSet());
+		System.out.println("e) " + courseWords);
