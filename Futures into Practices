@@ -1,0 +1,21 @@
+// Subtask a)
+	private static CompletionStage<Integer> addCredits (List<Course> courses) { 
+		 return CompletableFuture.supplyAsync(() -> courses.stream().map(x -> x.getCredits()).reduce(0,(a,b) -> a+b));	}
+	private static CompletionStage<Boolean> checkcourse(Integer sum)
+	
+	{
+		return CompletableFuture.supplyAsync(()-> sum>50);
+		
+		
+		
+	}
+  
+  // Subtask a) -- see method addCredits above
+		final CompletionStage<Integer> futureSum = addCredits(courses);
+		
+		// Subtask b)
+		System.out.println("Courses:" +futureSum.toCompletableFuture().join() );
+		
+		// Subtask c)
+		final CompletionStage<Boolean> futureStatus = addCredits(courses).thenCompose(x->checkcourse(x));
+		System.out.println("Result of test: "+futureStatus.toCompletableFuture().join());
